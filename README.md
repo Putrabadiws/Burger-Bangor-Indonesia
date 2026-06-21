@@ -35,5 +35,5 @@ Website publik untuk Burger Bangor Indonesia — menampilkan menu, berita, lokas
 - Desain responsif (mobile & desktop)
 
 <div align="center">
-<sub>© Burger Bangor Indonesia. Preview : <a href="https://burgerbangorindonesia.com/">https://burgerbangorindonesia.com/</a></sub>
+<sub>© Burger Bangor Indonesia. Preview : <a href="https://bangorgroup.com/">https://bangorgroup.com/</a></sub>
 </div>
