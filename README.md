@@ -34,6 +34,6 @@ Website publik untuk Burger Bangor Indonesia — menampilkan menu, berita, lokas
 - SEO (sitemap, robots, structured data)
 - Desain responsif (mobile & desktop)
 
-## Lisensi
-
-All Rights Reserved. Lihat [LICENSE](LICENSE). Seluruh aset dan materi merupakan milik Burger Bangor Indonesia (Bangor Group Indonesia).
+<div align="center">
+<sub>© Burger Bangor Indonesia. Preview : <a href="https://burgerbangorindonesia.com/">https://burgerbangorindonesia.com/</a></sub>
+</div>
