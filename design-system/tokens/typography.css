@@ -1,0 +1,110 @@
+/* ============================================================
+   BURGER BANGOR — DESIGN SYSTEM
+   Typography — Font Face Declarations
+   File: design-system/tokens/typography.css
+
+   Hanya berisi @font-face.
+   Token dan utility class ada di globals.css.
+   ============================================================ */
+
+
+/* ── Helvetica Neue ──────────────────────────────────────── */
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueRoman.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueItalic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueMedium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueMediumItalic.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  /*
+    SemiBold (600) → Helvetica Neue 65 Medium
+    Dalam sistem penamaan Helvetica, "65" = SemiBold/Medium-Bold
+  */
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue-65/Helvetica-Neue-65-Medium.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueBoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueHeavy.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/helvetica-neue/HelveticaNeueBlack.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  
+  /* ── Inter Variable ──────────────────────────────────────── */
+  
+  /*
+    Variable font — satu file untuk semua weight (100–900).
+    font-weight: 100 900 artinya support seluruh range.
+  */
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter/InterVariable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter/InterVariable-Italic.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }

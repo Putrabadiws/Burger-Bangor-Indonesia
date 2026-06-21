@@ -12,7 +12,7 @@
 
 Website publik untuk Burger Bangor Indonesia — menampilkan menu, berita, lokasi outlet, peluang karier, dan informasi kemitraan. Dibangun sebagai frontend modern yang menarik konten dinamis dari layanan backend.
 
-> Repository ini bersifat **showcase** — hanya menampilkan logo, lisensi, dan deskripsi singkat. Kode sumber lengkap tidak disertakan.
+> Repository ini bersifat **showcase** — berisi sebagian kode sumber (subset) sebagai contoh, beserta logo dan lisensi. Kode sumber lengkap tidak disertakan.
 
 ## Tech Stack
 

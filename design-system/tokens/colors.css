@@ -1,0 +1,141 @@
+@theme {
+  /* =========================================================
+   * PRIMITIVE TOKENS (SOURCE OF TRUTH)
+   * ========================================================= */
+
+  /* Primary (mobile DS approved) */
+  --color-primary-50: #f5fae6;
+  --color-primary-100: #dfefb0;
+  --color-primary-200: #cfe88a;
+  --color-primary-300: #b9dd54;
+  --color-primary-400: #acd633;
+  --color-primary-500: #97cc00;
+  --color-primary-600: #89ba00;
+  --color-primary-700: #6b9100;
+  --color-primary-800: #537000;
+  --color-primary-900: #3f5600;
+
+  /* Dark */
+  --color-dark-50: #e9e9e9;
+  --color-dark-100: #bababa;
+  --color-dark-200: #999999;
+  --color-dark-300: #6b6b6b;
+  --color-dark-400: #4c4c4c;
+  --color-dark-500: #222222;
+  --color-dark-600: #1f1f1f;
+  --color-dark-700: #181818;
+  --color-dark-800: #131313;
+  --color-dark-900: #0e0e0e;
+
+  /* White */
+  --color-white-broken: #f8f7f3;
+  --color-white-50: #ffffff;
+  --color-white-100: #f2f2f2;
+  --color-white-200: #e8e8e8;
+  --color-white-300: #b5b5b5;
+  --color-white-400: #8c8c8c;
+  --color-white-500: #6b6b6b;
+
+  /* Info */
+  --color-info-50: #eaf0fe;
+  --color-info-100: #bdd0fd;
+  --color-info-200: #9dbafc;
+  --color-info-300: #709afb;
+  --color-info-400: #5586fa;
+  --color-info-500: #2a68f9;
+  --color-info-600: #265fe3;
+  --color-info-700: #1e4ab1;
+  --color-info-800: #173989;
+  --color-info-900: #122c69;
+
+  /* Error */
+  --color-error-50: #ffe8e8;
+  --color-error-100: #ffb7b7;
+  --color-error-200: #ff9595;
+  --color-error-300: #ff6464;
+  --color-error-400: #ff4646;
+  --color-error-500: #ff1818;
+  --color-error-600: #e81616;
+  --color-error-700: #b51111;
+  --color-error-800: #8c0d0d;
+  --color-error-900: #6b0a0a;
+
+  /* =========================================================
+   * BACKWARD-COMPATIBILITY ALIASES (LEGACY CLASSES)
+   * Keep existing UI stable while migrating components.
+   * ========================================================= */
+
+  /* Secondary aliases -> Dark scale */
+  --color-secondary-50: var(--color-dark-50);
+  --color-secondary-100: var(--color-dark-100);
+  --color-secondary-200: var(--color-dark-200);
+  --color-secondary-300: var(--color-dark-300);
+  --color-secondary-400: var(--color-dark-400);
+  --color-secondary-500: var(--color-dark-500);
+  --color-secondary-600: var(--color-dark-600);
+  --color-secondary-700: var(--color-dark-700);
+  --color-secondary-800: var(--color-dark-800);
+  --color-secondary-900: var(--color-dark-900);
+
+  /* Neutral light aliases -> White scale */
+  --color-neutral-light-50: var(--color-white-broken);
+  --color-neutral-light-100: var(--color-white-100);
+  --color-neutral-light-200: var(--color-white-200);
+  --color-neutral-light-300: var(--color-white-300);
+  --color-neutral-light-400: var(--color-white-400);
+  --color-neutral-light-500: var(--color-white-500);
+  --color-neutral-light-600: var(--color-dark-200);
+  --color-neutral-light-700: var(--color-dark-300);
+  --color-neutral-light-800: var(--color-dark-400);
+  --color-neutral-light-900: var(--color-dark-500);
+
+  /* Danger aliases -> Error scale */
+  --color-danger-50: var(--color-error-50);
+  --color-danger-100: var(--color-error-100);
+  --color-danger-200: var(--color-error-200);
+  --color-danger-300: var(--color-error-300);
+  --color-danger-400: var(--color-error-400);
+  --color-danger-500: var(--color-error-500);
+  --color-danger-600: var(--color-error-600);
+  --color-danger-700: var(--color-error-700);
+  --color-danger-800: var(--color-error-800);
+  --color-danger-900: var(--color-error-900);
+
+  /* Accent preserved for existing components */
+  --color-accent-50: #f9fbea;
+  --color-accent-100: #edf3be;
+  --color-accent-200: #e4ed9e;
+  --color-accent-300: #d8e572;
+  --color-accent-400: #d1e057;
+  --color-accent-500: #c5d82d;
+  --color-accent-600: #b3c529;
+  --color-accent-700: #8c9920;
+  --color-accent-800: #6c7719;
+  --color-accent-900: #535b13;
+
+  /* =========================================================
+   * SEMANTIC TOKENS (NEW SYSTEM ENTRY POINT)
+   * Use these in new mobile implementations.
+   * ========================================================= */
+  --color-text-primary: var(--color-dark-500);
+  --color-text-secondary: var(--color-dark-300);
+  --color-text-muted: var(--color-dark-200);
+  --color-text-inverse: var(--color-white-50);
+
+  --color-surface-base: var(--color-white-50);
+  --color-surface-subtle: var(--color-white-broken);
+  --color-surface-muted: var(--color-white-100);
+  --color-surface-strong: var(--color-dark-500);
+
+  --color-border-subtle: var(--color-white-200);
+  --color-border-strong: var(--color-dark-200);
+
+  --color-brand-primary: var(--color-primary-500);
+  --color-brand-primary-hover: var(--color-primary-600);
+  --color-brand-primary-active: var(--color-primary-700);
+
+  --color-feedback-info: var(--color-info-500);
+  --color-feedback-info-subtle: var(--color-info-50);
+  --color-feedback-error: var(--color-error-500);
+  --color-feedback-error-subtle: var(--color-error-50);
+}

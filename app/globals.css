@@ -1,0 +1,773 @@
+@import "tailwindcss";
+@import "../design-system/tokens/colors.css";
+@import "../design-system/tokens/typography.css";
+@import "../node_modules/tw-animate-css/dist/tw-animate.css";
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  @apply scroll-smooth;
+  overflow-x: hidden;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-helvetica: var(--font-helvetica);
+  --font-futura: var(--font-futura);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-accordion-down: accordion-down 0.3s ease-out;
+  --animate-accordion-up: accordion-up 0.3s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+@theme {
+  /* ===========================
+   *  FONT WEIGHT TOKENS
+   * =========================== */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* ===========================
+   *  HEADLINE (FUTURA PT)
+   * =========================== */
+  --text-h1: 3rem;
+  --text-h1--line-height: 3.625rem;
+  --text-h2: 2.5rem;
+  --text-h2--line-height: 3rem;
+  --text-h3: 2rem;
+  --text-h3--line-height: 2.375rem;
+  --text-h4: 1.75rem;
+  --text-h4--line-height: 2.125rem;
+  --text-h5: 1.5rem;
+  --text-h5--line-height: 1.75rem;
+
+  /* ===========================
+   *  HEADLINE MOBILE (FUTURA PT)
+   * =========================== */
+  --text-h1-m: 2.25rem;
+  --text-h1-m--line-height: 2.75rem;
+  --text-h2-m: 1.875rem;
+  --text-h2-m--line-height: 2.25rem;
+  --text-h3-m: 1.5rem;
+  --text-h3-m--line-height: 2rem;
+  --text-h4-m: 1.375rem;
+  --text-h4-m--line-height: 1.5rem;
+  --text-h5-m: 1.25rem;
+  --text-h5-m--line-height: 1.625rem;
+
+  /* ===========================
+   *  SUBTITLE (FUTURA PT)
+   * =========================== */
+  --text-s1: 1.125rem;
+  --text-s1--line-height: 1.75rem;
+  --text-s2: 1rem;
+  --text-s2--line-height: 1.5rem;
+
+  /* ===========================
+   *  BODY (HELVETICA NEUE)
+   * =========================== */
+  --text-b1: 1rem;
+  --text-b1--line-height: 1.5rem;
+  --text-b2: 1.25rem;
+  --text-b2--line-height: 1.5rem;
+  --text-b3: 0.875rem;
+  --text-b3--line-height: 1.25rem;
+  --text-b4: 0.875rem;
+  --text-b4--line-height: 1.25rem;
+
+  /* ===========================
+   *  CAPTION & LABEL
+   * =========================== */
+  --text-c1: 0.75rem;
+  --text-c1--line-height: 1rem;
+  --text-c2: 0.75rem;
+  --text-c2--line-height: 1rem;
+  --text-c3: 0.625rem;
+  --text-c3--line-height: 0.875rem;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1rem;
+
+  /* ===========================
+   *  BUTTON TEXT
+   * =========================== */
+  --text-btn-giant: 1.125rem;
+  --text-btn-giant--line-height: 1.5rem;
+  --text-btn-lg: 1rem;
+  --text-btn-lg--line-height: 1.25rem;
+  --text-btn-md: 0.875rem;
+  --text-btn-md--line-height: 1rem;
+  --text-btn-sm: 0.75rem;
+  --text-btn-sm--line-height: 1rem;
+  --text-btn-xs: 0.625rem;
+  --text-btn-xs--line-height: 0.75rem;
+
+  /* ===========================
+   *  NEW DESIGN SYSTEM — HEADING (HELVETICA NEUE)
+   *  Dipakai untuk komponen mobile baru
+   * =========================== */
+  --text-new-h1-size: 3rem;        /* 48px SemiBold */
+  --text-new-h2-size: 2.75rem;     /* 44px SemiBold */
+  --text-new-h3-size: 2.5rem;      /* 40px Bold */
+  --text-new-h4-size: 2.25rem;     /* 36px Bold */
+  --text-new-h5-size: 2rem;        /* 32px SemiBold */
+  --text-new-h6-size: 1.5rem;      /* 24px Bold */
+
+  --text-new-h1-weight: 600;
+  --text-new-h2-weight: 600;
+  --text-new-h3-weight: 700;
+  --text-new-h4-weight: 700;
+  --text-new-h5-weight: 600;
+  --text-new-h6-weight: 700;
+
+  /* ===========================
+   *  NEW DESIGN SYSTEM — BODY (INTER)
+   *  Dipakai untuk komponen mobile baru
+   * =========================== */
+  --text-new-body-2xl: 1.5rem;     /* 24px */
+  --text-new-body-xl: 1.375rem;    /* 22px */
+  --text-new-body-lg: 1.25rem;     /* 20px */
+  --text-new-body-md: 1.125rem;    /* 18px */
+  --text-new-body: 1rem;           /* 16px */
+  --text-new-body-sm: 0.875rem;    /* 14px */
+  --text-new-body-xs: 0.75rem;     /* 12px */
+  --text-new-body-2xs: 0.625rem;   /* 10px */
+}
+
+@layer base {
+  ::selection {
+    background: var(--color-primary-500);
+    color: var(--color-secondary-900);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-b1);
+    line-height: var(--text-b1--line-height);
+    font-weight: var(--font-weight-regular);
+  }
+
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h1);
+    line-height: var(--text-h1--line-height);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h4);
+    line-height: var(--text-h4--line-height);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h5 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h5);
+    line-height: var(--text-h5--line-height);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  p {
+    font-size: var(--text-b1);
+    line-height: var(--text-b1--line-height);
+  }
+}
+
+@layer components {
+  /* HEADLINE — existing (Futura PT) */
+  .text-h1 { font-family: var(--font-heading); font-size: var(--text-h1); line-height: var(--text-h1--line-height); font-weight: var(--font-weight-semibold); }
+  .text-h2 { font-family: var(--font-heading); font-size: var(--text-h2); line-height: var(--text-h2--line-height); font-weight: var(--font-weight-semibold); }
+  .text-h3 { font-family: var(--font-heading); font-size: var(--text-h3); line-height: var(--text-h3--line-height); font-weight: var(--font-weight-semibold); }
+  .text-h4 { font-family: var(--font-heading); font-size: var(--text-h4); line-height: var(--text-h4--line-height); font-weight: var(--font-weight-semibold); }
+  .text-h5 { font-family: var(--font-heading); font-size: var(--text-h5); line-height: var(--text-h5--line-height); font-weight: var(--font-weight-semibold); }
+
+  /* SUBTITLE */
+  .text-s1 { font-family: var(--font-heading); font-size: var(--text-s1); line-height: var(--text-s1--line-height); font-weight: var(--font-weight-semibold); }
+  .text-s2 { font-family: var(--font-heading); font-size: var(--text-s2); line-height: var(--text-s2--line-height); font-weight: var(--font-weight-semibold); }
+
+  /* BODY */
+  .text-b1 { font-family: var(--font-body); font-size: var(--text-b1); line-height: var(--text-b1--line-height); font-weight: var(--font-weight-regular); }
+  .text-b2 { font-family: var(--font-body); font-size: var(--text-b2); line-height: var(--text-b2--line-height); font-weight: var(--font-weight-medium); }
+  .text-b3 { font-family: var(--font-body); font-size: var(--text-b3); line-height: var(--text-b3--line-height); font-weight: var(--font-weight-regular); }
+  .text-b4 { font-family: var(--font-body); font-size: var(--text-b4); }
+  .text-label { font-family: var(--font-body); font-size: var(--text-label); line-height: var(--text-label--line-height); font-weight: var(--font-weight-medium); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* BUTTON TEXT */
+  .btn-text-giant { font-family: var(--font-button); font-size: var(--text-btn-giant); line-height: var(--text-btn-giant--line-height); font-weight: var(--font-weight-semibold); }
+  .btn-text-lg    { font-family: var(--font-button); font-size: var(--text-btn-lg);    line-height: var(--text-btn-lg--line-height);    font-weight: var(--font-weight-semibold); }
+  .btn-text-md    { font-family: var(--font-button); font-size: var(--text-btn-md);    line-height: var(--text-btn-md--line-height);    font-weight: var(--font-weight-semibold); }
+  .btn-text-sm    { font-family: var(--font-button); font-size: var(--text-btn-sm);    line-height: var(--text-btn-sm--line-height);    font-weight: var(--font-weight-semibold); }
+  .btn-text-xs    { font-family: var(--font-button); font-size: var(--text-btn-xs);    line-height: var(--text-btn-xs--line-height);    font-weight: var(--font-weight-semibold); }
+
+  /* ── NEW DESIGN SYSTEM CLASSES ──────────────────────────
+     Prefix "ds-" supaya tidak konflik dengan class lama.
+     Dipakai di komponen mobile baru.
+  ────────────────────────────────────────────────────── */
+
+  /* Headings — Helvetica Neue */
+  .ds-h1 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: var(--text-new-h1-size); font-weight: var(--text-new-h1-weight); line-height: 1.2; letter-spacing: -0.02em; }
+  .ds-h2 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: var(--text-new-h2-size); font-weight: var(--text-new-h2-weight); line-height: 1.2; letter-spacing: -0.02em; }
+  .ds-h3 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: var(--text-new-h3-size); font-weight: var(--text-new-h3-weight); line-height: 1.2; letter-spacing: -0.02em; }
+  .ds-h4 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: var(--text-new-h4-size); font-weight: var(--text-new-h4-weight); line-height: 1.3; letter-spacing: -0.01em; }
+  .ds-h5 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: var(--text-new-h5-size); font-weight: var(--text-new-h5-weight); line-height: 1.3; }
+  .ds-h6 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: var(--text-new-h6-size); font-weight: var(--text-new-h6-weight); line-height: 1.4; }
+
+  /* Body — Inter */
+  .ds-body-2xl    { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-2xl); font-weight: 400; line-height: 1.5; }
+  .ds-body-2xl-md { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-2xl); font-weight: 500; line-height: 1.5; }
+  .ds-body-2xl-sb { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-2xl); font-weight: 600; line-height: 1.5; }
+
+  .ds-body-xl     { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-xl); font-weight: 400; line-height: 1.5; }
+  .ds-body-xl-md  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-xl); font-weight: 500; line-height: 1.5; }
+  .ds-body-xl-sb  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-xl); font-weight: 600; line-height: 1.5; }
+
+  .ds-body-lg     { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-lg); font-weight: 400; line-height: 1.5; }
+  .ds-body-lg-md  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-lg); font-weight: 500; line-height: 1.5; }
+
+  .ds-body-md-sb  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-md); font-weight: 600; line-height: 1.5; }
+
+  .ds-body        { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body); font-weight: 400; line-height: 1.5; }
+  .ds-body-md     { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body); font-weight: 500; line-height: 1.5; }
+  .ds-body-sb     { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body); font-weight: 600; line-height: 1.5; }
+
+  .ds-body-sm     { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-sm); font-weight: 400; line-height: 1.5; }
+  .ds-body-sm-md  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-sm); font-weight: 500; line-height: 1.5; }
+  .ds-body-sm-sb  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-sm); font-weight: 600; line-height: 1.5; }
+
+  .ds-body-xs     { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-xs); font-weight: 400; line-height: 1.6; }
+  .ds-body-xs-md  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-xs); font-weight: 500; line-height: 1.6; }
+  .ds-body-xs-sb  { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-xs); font-weight: 600; line-height: 1.6; }
+
+  .ds-body-2xs    { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-2xs); font-weight: 400; line-height: 1.6; }
+  .ds-body-2xs-md { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-2xs); font-weight: 500; line-height: 1.6; }
+  .ds-body-2xs-sb { font-family: "Inter", Arial, sans-serif; font-size: var(--text-new-body-2xs); font-weight: 600; line-height: 1.6; }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --swiper-theme-color: var(--color-primary-500);
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-pagination-bullet-active {
+    background: var(--primary) !important;
+  }
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .navbar-outlet-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-white-50);
+    background-color: var(--color-secondary-900);
+    padding: 0.625rem 1.75rem;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-white-50);
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .navbar-outlet-cta:hover {
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+    color: var(--color-white-50);
+  }
+
+  .navbar-outlet-cta--overlay {
+    border-color: var(--color-white-50);
+    background-color: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(12px);
+  }
+
+  .navbar-outlet-cta--overlay:hover {
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Article Content Styles */
+.article-content h2 { font-size: 1.875rem; font-weight: 700; color: #1a1a1a; margin-top: 2.5rem; margin-bottom: 1.25rem; line-height: 1.3; }
+.article-content h3 { font-size: 1.5rem; font-weight: 600; color: #1a1a1a; margin-top: 2rem; margin-bottom: 1rem; line-height: 1.35; }
+.article-content h4 { font-size: 1.25rem; font-weight: 600; color: #2a2a2a; margin-top: 1.5rem; margin-bottom: 0.75rem; line-height: 1.4; }
+.article-content p { margin-bottom: 1.25rem; line-height: 1.75; font-size: 1.0625rem; color: #374151; }
+.article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.75rem; }
+.article-content li { margin-bottom: 0.75rem; line-height: 1.65; color: #374151; }
+.article-content li strong { color: #1a1a1a; font-weight: 600; }
+.article-content blockquote { border-left: 4px solid var(--color-primary-500); padding: 0.75rem 1.5rem; margin: 2rem 0; background: var(--color-accent-300); border-radius: 0 0.5rem 0.5rem 0; }
+.article-content blockquote p { font-style: italic; color: #1f2937; margin-bottom: 0.5rem; }
+.article-content cite { display: block; font-size: 0.9375rem; color: #6b7280; font-style: normal; font-weight: 500; }
+.article-content figure { margin: 2.5rem 0; }
+.article-content figure img { width: 100%; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.article-content figcaption { margin-top: 0.75rem; font-size: 0.9375rem; color: #6b7280; text-align: center; font-style: italic; }
+.article-content table { width: 100%; margin: 2rem 0; border-collapse: collapse; border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; }
+.article-content caption { caption-side: top; font-weight: 600; color: #1a1a1a; margin-bottom: 0.75rem; font-size: 1.0625rem; }
+.article-content th { background: #f9fafb; padding: 0.875rem 1rem; text-align: left; font-weight: 600; color: #1f2937; border-bottom: 2px solid #e5e7eb; }
+.article-content td { padding: 0.875rem 1rem; border-bottom: 1px solid #e5e7eb; color: #374151; }
+.article-content tbody tr:last-child td { border-bottom: none; }
+.article-content tbody tr:hover { background: #f9fafb; }
+.article-content strong { font-weight: 600; color: #1a1a1a; }
+.article-content em { font-style: italic; }
+.article-content time { font-weight: 500; color: var(--color-primary-500); }
+.article-content .highlight { background: #fef3c7; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-weight: 500; }
+.article-content .cta { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1.25rem; border-radius: 0 0.5rem 0.5rem 0; margin: 2rem 0; }
+
+@media (max-width: 768px) {
+  .article-content h2 { font-size: 1.5rem; }
+  .article-content h3 { font-size: 1.25rem; }
+  .article-content h4 { font-size: 1.125rem; }
+  .article-content p { font-size: 1rem; }
+  .article-content table { font-size: 0.875rem; }
+  .article-content th, .article-content td { padding: 0.625rem 0.75rem; }
+}
+
+/* Article detail mobile — Figma node 22:67 */
+.article-content--mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: var(--color-dark-400);
+}
+
+.article-content--mobile h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-dark-500);
+  margin: 0.5rem 0 0;
+}
+
+.article-content--mobile h3,
+.article-content--mobile h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-dark-500);
+  margin: 0.25rem 0 0;
+}
+
+.article-content--mobile p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: var(--color-dark-400);
+}
+
+.article-content--mobile a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-content--mobile img {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.article-content--mobile ul,
+.article-content--mobile ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.article-content--mobile li {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+/* Article detail desktop — Figma node 928:5481 */
+.article-content--desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: var(--color-dark-400);
+}
+
+.article-content--desktop h2 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: var(--color-dark-500);
+  margin: 0.75rem 0 0;
+}
+
+.article-content--desktop h3,
+.article-content--desktop h4 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.625rem;
+  color: var(--color-dark-500);
+  margin: 0.5rem 0 0;
+}
+
+.article-content--desktop p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: var(--color-dark-400);
+}
+
+.article-content--desktop a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-content--desktop img {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 0.5rem 0;
+  aspect-ratio: auto;
+  max-height: 28rem;
+  object-fit: cover;
+}
+
+.article-content--desktop ul,
+.article-content--desktop ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.article-content--desktop li {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: var(--color-dark-400);
+}
+
+/* Article detail responsif — satu node, gabungan --mobile (base) + --desktop (>=768px).
+   Dipakai NewsArticleView agar body artikel hanya sekali di DOM (fix heading dobel SEO).
+   Breakpoint 768px = Tailwind `md:`, selaras utility responsif di komponen. */
+.article-content--responsive {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: var(--color-dark-400);
+}
+
+.article-content--responsive h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-dark-500);
+  margin: 0.5rem 0 0;
+}
+
+.article-content--responsive h3,
+.article-content--responsive h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-dark-500);
+  margin: 0.25rem 0 0;
+}
+
+.article-content--responsive p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: var(--color-dark-400);
+}
+
+.article-content--responsive a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-content--responsive img {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.article-content--responsive ul,
+.article-content--responsive ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.article-content--responsive li {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .article-content--responsive {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+
+  .article-content--responsive h2 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin: 0.75rem 0 0;
+  }
+
+  .article-content--responsive h3,
+  .article-content--responsive h4 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+    margin: 0.5rem 0 0;
+  }
+
+  .article-content--responsive p {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+
+  .article-content--responsive img {
+    margin: 0.5rem 0;
+    aspect-ratio: auto;
+    max-height: 28rem;
+    object-fit: cover;
+  }
+
+  .article-content--responsive ul,
+  .article-content--responsive ol {
+    padding-left: 1.5rem;
+  }
+
+  .article-content--responsive li {
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+}
