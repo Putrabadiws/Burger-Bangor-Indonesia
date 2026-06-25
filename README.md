@@ -1,38 +1,36 @@
 <div align="center">
   <img src="assets/logo.webp" alt="Burger Bangor Indonesia" width="280" />
-
   <h1>Burger Bangor Indonesia — Website</h1>
-
-  <p>Website marketing resmi <strong>Burger Bangor Indonesia</strong>, jaringan burger lokal terbesar di Indonesia.</p>
+  <p>Official marketing website of <strong>Burger Bangor Indonesia</strong>, Indonesia's largest local burger chain.</p>
 </div>
 
 ---
 
-## Tentang Projek
+## About
 
-Website publik untuk Burger Bangor Indonesia — menampilkan menu, berita, lokasi outlet, peluang karier, dan informasi kemitraan. Dibangun sebagai frontend modern yang menarik konten dinamis dari layanan backend.
+Public website for Burger Bangor Indonesia — showcasing the menu, news, store locations, career opportunities, and partnership information. Built as a modern frontend that fetches dynamic content from backend services.
 
-> Repository ini bersifat **showcase** — berisi sebagian kode sumber (subset) sebagai contoh, beserta logo dan lisensi. Kode sumber lengkap tidak disertakan.
+> This repository is a **showcase** — it contains a subset of the source code as an example, along with the logo and license. The full source code is not included.
 
 ## Tech Stack
 
-| Area       | Teknologi               |
+| Area       | Technology              |
 | ---------- | ----------------------- |
 | Framework  | Next.js 15 (App Router) |
 | UI Library | React 19                |
 | Styling    | Tailwind CSS v4         |
-| Bahasa     | TypeScript 5            |
-| Komponen   | shadcn/ui               |
+| Language   | TypeScript 5            |
+| Components | shadcn/ui               |
 
-## Fitur Utama
+## Key Features
 
-- Katalog menu & detail produk
-- Berita / artikel
-- Pencari lokasi outlet (store locator)
-- Halaman karier & kemitraan (franchise)
-- Formulir big-order & kontak
+- Menu catalog & product details
+- News / articles
+- Store locator
+- Careers & partnership (franchise) pages
+- Big-order & contact form
 - SEO (sitemap, robots, structured data)
-- Desain responsif (mobile & desktop)
+- Responsive design (mobile & desktop)
 
 <div align="center">
 <sub>© Burger Bangor Indonesia. Preview : <a href="https://burgerbangorindonesia.com/">https://burgerbangorindonesia.com/</a></sub>
